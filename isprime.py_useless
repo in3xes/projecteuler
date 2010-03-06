@@ -1,0 +1,20 @@
+#!/usr/bin/python
+
+def isprime(a):
+	lst = [2]
+	x = 2
+	while x < a:
+		test = 0
+		for y in lst:
+			if x%y != 0:
+				test = 1
+			else:
+				test = 0
+				break
+		if test == 1:
+			lst.append(x)
+		x = x+1
+	
+	print lst
+
+isprime(9917545156)
