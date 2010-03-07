@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-def primefact(a, lst):
+def primefact(a, lst=[]):
 	x = 2
 	while x < a:
 		if a%x == 0:
@@ -19,6 +19,5 @@ def primefact(a, lst):
 		lst.sort()
 	return lst
 
-l= []
-print primefact(12,l)
-
+if __name__ == '__main__':
+	print primefact(1234)

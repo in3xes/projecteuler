@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-def fact(a, lst):
+def fact(a, lst=[]):
 	x = 2
 	while x < a:
 		if a%x == 0:
@@ -21,10 +21,10 @@ def fact(a, lst):
 		lst.sort()
 	return lst
 
-l= []
-a =144
-print fact(a,l)
-print len(l)
+#print fact(44)
+
+if __name__ == '__main__':
+  print fact(33)
 
 
 #It's not working
