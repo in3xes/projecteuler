@@ -27,6 +27,6 @@ for x in xrange(2, 1000000):
 
     if yes:
         count = count+1
-        print x
+#        print x
 
-print count
+#print count
