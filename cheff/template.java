@@ -16,4 +16,8 @@ public class Main {
     }
     public static void prnt(long s) {
 	System.out.println(s);
+    }
+    public static int toInt(String s) {
+	return Integer.parseInt(s);
+    }
 }

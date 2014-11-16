@@ -2,6 +2,15 @@ public class Main {
 
     public static void main(String[] args) throws java.lang.Exception {
 	java.io.BufferedReader r = new java.io.BufferedReader(new java.io.InputStreamReader (System.in));
+
+	String[] input = r.readLine().split(" ");
+	int A = toInt(input[0]);
+	int B = toInt(input[1]);
+	int diff = A - B;
+	if(diff % 10 == 9)
+	    prnt(--diff);
+	else
+	    prnt(++diff);
     }
 
     
