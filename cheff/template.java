@@ -1,3 +1,6 @@
+import java.io.*;
+import java.util.*;
+
 public class Main {
 
     public static void main(String[] args) throws java.lang.Exception {
@@ -5,8 +8,8 @@ public class Main {
 
 	int lines = toInt(r.readLine());
 	for(int i = 0; i < lines; i++) {
+	    
 	}
-
     }
 
     public static void prnt(String s) {
@@ -26,5 +29,8 @@ public class Main {
     }
     public static int toInt(String s) {
 	return Integer.parseInt(s);
+    }
+    public static long toLong(String s) {
+	return Long.parseLong(s);
     }
 }

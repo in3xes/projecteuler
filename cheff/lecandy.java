@@ -8,7 +8,17 @@ public class Main {
 
 	int lines = toInt(r.readLine());
 	for(int i = 0; i < lines; i++) {
-	    
+	    StringTokenizer st = new StringTokenizer(r.readLine());
+	    int N = toInt(st.nextToken());
+	    int C = toInt(st.nextToken());
+	    st = new StringTokenizer(r.readLine());
+	    for(int j = 0; j < N; j++) {
+		C = C - toInt(st.nextToken());
+	    }
+	    if(C < 0)
+		prnt("No");
+	    else
+		prnt("Yes");
 	}
     }
 

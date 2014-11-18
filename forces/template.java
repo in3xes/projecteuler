@@ -8,8 +8,8 @@ public class Main {
 
 	int lines = toInt(r.readLine());
 	for(int i = 0; i < lines; i++) {
-	    
 	}
+
     }
 
     public static void prnt(String s) {
