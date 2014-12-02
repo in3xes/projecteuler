@@ -6,10 +6,22 @@ public class Main {
     public static void main(String[] args) throws java.lang.Exception {
 	java.io.BufferedReader r = new java.io.BufferedReader(new java.io.InputStreamReader (System.in));
 
-	int lines = toInt(r.readLine());
-	for(int i = 0; i < lines; i++) {
+	StringTokenizer st = new StringTokenizer(r.readLine(), "+");
+	int n = st.countTokens();
+	Integer[] arr = new Integer[n];
+	for(int i = 0; i < n; i++) {
+	    arr[i] = toInt(st.nextToken());
+	}
+	Arrays.sort(arr);
+
+	StringBuffer sb = new StringBuffer();
+	for(int i = 0; i < n; i++) {
+	    sb.append(arr[i]);
+	    if(i != n -1)
+		sb.append("+");
 	}
 
+	prnt(sb.toString());
     }
 
     public static void prnt(String s) {

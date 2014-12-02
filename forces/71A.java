@@ -8,6 +8,18 @@ public class Main {
 
 	int lines = toInt(r.readLine());
 	for(int i = 0; i < lines; i++) {
+	    String s = r.readLine();
+	    int len = s.length();
+	    if(len > 10) {
+		StringBuffer sb = new StringBuffer();
+		sb.append(s.charAt(0));
+		sb.append(Integer.toString(len-2));
+		sb.append(s.charAt(len - 1));
+		
+		prnt(sb.toString());
+	    }
+	    else
+		prnt(s);
 	}
 
     }

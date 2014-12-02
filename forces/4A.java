@@ -6,9 +6,14 @@ public class Main {
     public static void main(String[] args) throws java.lang.Exception {
 	java.io.BufferedReader r = new java.io.BufferedReader(new java.io.InputStreamReader (System.in));
 
-	int lines = toInt(r.readLine());
-	for(int i = 0; i < lines; i++) {
-	}
+	int n = toInt(r.readLine());
+
+	if(n == 0 || n == 1 || n == 2)
+	    prnt("NO");
+	else if(n % 2 == 0)
+	    prnt("YES");
+	else
+	    prnt("NO");
 
     }
 
@@ -29,8 +34,5 @@ public class Main {
     }
     public static int toInt(String s) {
 	return Integer.parseInt(s);
-    }
-    public static long toLong(String s) {
-	return Long.parseLong(s);
     }
 }

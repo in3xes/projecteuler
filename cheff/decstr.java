@@ -8,8 +8,17 @@ public class Main {
 
 	int lines = toInt(r.readLine());
 	for(int i = 0; i < lines; i++) {
-	}
+	    int n = toInt(r.readLine());
+	    int b = n % 25;
+	    StringBuffer sb = new StringBuffer();
+	    n = n + n / 25;
+	    if(b == 0)
+		n--;
+	    for(int j = 0; j <= n; j++)
+		sb.append((char)((j%26)+97));
 
+	    prnt(sb.reverse().toString());
+	}
     }
 
     public static void prnt(String s) {
