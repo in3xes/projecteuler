@@ -6,18 +6,20 @@ public class Main {
     public static void main(String[] args) throws java.lang.Exception {
 	java.io.BufferedReader r = new java.io.BufferedReader(new java.io.InputStreamReader (System.in));
 
-	char[] s = r.readLine().toCharArray();
-	char[] hello = "hello".toCharArray();
-	int pos= 0;
-	String ans = "NO";
-	for(char c: s) {
-	    if(hello[pos] == c)
-		pos++;
-
-	    if(pos == 5) {
-		ans = "YES";
-		break;
-	    }
+	StringTokenizer st = new StringTokenizer(r.readLine());
+	int N = toInt(st.nextToken());
+	int X = toInt(st.nextToken());
+	int Y = toInt(st.nextToken());
+	st = new StringTokenizer(r.readLine());
+	int[] arr = new int[N];
+	for(int i = 0; i < N; i++) {
+	    arr[i] = toInt(st.nextToken());
+	}
+	long ans = 0;
+	st = new StringTokenizer(r.readLine());
+	for(int i = 0; i < N; i++) {
+	    int n = arr[i];
+	    ans = ans + Math.max(n, toInt(st.nextToken()));
 	}
 
 	prnt(ans);
