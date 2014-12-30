@@ -6,21 +6,28 @@ public class Main {
     public static void main(String[] args) throws java.lang.Exception {
 	java.io.BufferedReader r = new java.io.BufferedReader(new java.io.InputStreamReader (System.in));
 
-	char[] s = r.readLine().toCharArray();
-	char[] hello = "hello".toCharArray();
-	int pos= 0;
-	String ans = "NO";
-	for(char c: s) {
-	    if(hello[pos] == c)
-		pos++;
+	int n = toInt(r.readLine());
+	StringTokenizer st = new StringTokenizer(r.readLine());
+	Integer arr[] = new Integer[n];
+	int sum = 0;
 
-	    if(pos == 5) {
-		ans = "YES";
+	for(int i = 0; i < n; i++) {
+	    arr[i] = toInt(st.nextToken());
+	    sum += arr[i];
+	}
+
+	Arrays.sort(arr, Collections.reverseOrder());
+
+	int tmp = 0;
+	int ans = 0;
+	for(int i = 0; i < n; i++) {
+	    tmp += arr[i];
+	    ans++;
+	    if(tmp > sum/2) {
+		prnt(ans);
 		break;
 	    }
 	}
-
-	prnt(ans);
     }
 
     public static void prnt(String s) {
