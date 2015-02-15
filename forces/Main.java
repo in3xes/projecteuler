@@ -6,10 +6,22 @@ public class Main {
     public static void main(String[] args) throws java.lang.Exception {
 	java.io.BufferedReader r = new java.io.BufferedReader(new java.io.InputStreamReader (System.in));
 
-	int lines = toInt(r.readLine());
-	for(int i = 0; i < lines; i++) {
+	int n = toInt(r.readLine());
+	int digit = 0;
+	int ans = 0;
+	int multipler = 1
+	while(n > 0) {
+	    digit = n % 10;
+	    n = n / 10;
+	    if(digit >= 5) {
+		if(n == 0 && digit == 9)
+		    digit = 9;
+		else
+		    digit = 9 - digit;
+	    }
+	    ans = ans * 10 + digit;
 	}
-
+	prnt(ans);
     }
 
     public static void prnt(String s) {

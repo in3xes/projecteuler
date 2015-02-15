@@ -8,31 +8,7 @@ public class Main {
 
 	int lines = toInt(r.readLine());
 	for(int i = 0; i < lines; i++) {
-	    int size = toInt(r.readLine());
-	    int[] arr = new int[100001];
-	    StringTokenizer st = new StringTokenizer(r.readLine());
-	    int sum = 0;
-	    int max = 0;
-	    int index = -1;
-	    for(int j = 0; j < size; j++) {
-		int tmp = toInt(st.nextToken());
-		arr[tmp]++;
-		sum = sum + tmp;
-
-		if(arr[tmp] > max) {
-		    max = arr[tmp];
-		    index = tmp;
-		}
-	    }
-	    int s = 0;
-	    for(int j = 0; j < 100001; j++) {
-		if(sum > (size * j)) {
-		    if(s < arr[j])
-			s = arr[j];
-		}
-	    }
-
-	    prnt(size - s);
+	    
 	}
     }
 

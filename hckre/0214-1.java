@@ -6,33 +6,29 @@ public class Main {
     public static void main(String[] args) throws java.lang.Exception {
 	java.io.BufferedReader r = new java.io.BufferedReader(new java.io.InputStreamReader (System.in));
 
+
 	int lines = toInt(r.readLine());
-	for(int i = 0; i < lines; i++) {
-	    int size = toInt(r.readLine());
-	    int[] arr = new int[100001];
+	for(int j = 0; j < lines; j++) {
 	    StringTokenizer st = new StringTokenizer(r.readLine());
-	    int sum = 0;
-	    int max = 0;
-	    int index = -1;
-	    for(int j = 0; j < size; j++) {
-		int tmp = toInt(st.nextToken());
-		arr[tmp]++;
-		sum = sum + tmp;
-
-		if(arr[tmp] > max) {
-		    max = arr[tmp];
-		    index = tmp;
+	    int n = toInt(st.nextToken());
+	    int k = toInt(st.nextToken());
+	    int p = toInt(st.nextToken());
+	    if ( (n - k) < p) {
+		st = new StringTokenizer(r.readLine());
+		for(int i = 0; i < k; i++) {
+		    int tmp = toInt(st.nextToken());
 		}
+		prnt(-1);
 	    }
-	    int s = 0;
-	    for(int j = 0; j < 100001; j++) {
-		if(sum > (size * j)) {
-		    if(s < arr[j])
-			s = arr[j];
+	    else {
+		st = new StringTokenizer(r.readLine());
+		for(int i = 0; i < k; i++) {
+		    int tmp = toInt(st.nextToken());
+		    if(tmp <= p)
+			p++;
 		}
+		prnt(p);
 	    }
-
-	    prnt(size - s);
 	}
     }
 
