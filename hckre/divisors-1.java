@@ -7,25 +7,13 @@ public class Main {
 	java.io.BufferedReader r = new java.io.BufferedReader(new java.io.InputStreamReader (System.in));
 
 	StringTokenizer st = new StringTokenizer(r.readLine());
+	long n = toLong(st.nextToken());
 	long a = toLong(st.nextToken());
 	long b = toLong(st.nextToken());
-	long m = 1000000007;
 
-	long product = 1;
-	while(b > 0) {
-	    // if b is odd
-	    if(b % 2 == 1) {
-		product = product * a;
-		if (product > m)
-		    product %= m;
-	    }
-	    a = a*a;
-	    if (a > m)
-		a %= m;
-
-	    b /= 2;
-	}
-	prnt(product);
+	long g = GCD(a, b);
+	long tmp = (a*b)/g;
+	prnt(n/a + n/b - n/(tmp));
     }
 
     public static void prnt(String s) {
@@ -48,5 +36,11 @@ public class Main {
     }
     public static long toLong(String s) {
 	return Long.parseLong(s);
+    }
+    static long GCD(long a, long b) {
+	if(a % b == 0)
+	    return b;
+
+	return GCD(b, a % b);
     }
 }
