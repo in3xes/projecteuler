@@ -6,10 +6,20 @@ public class Main {
     public static void main(String[] args) throws java.lang.Exception {
 	java.io.BufferedReader r = new java.io.BufferedReader(new java.io.InputStreamReader (System.in));
 
-	int lines = toInt(r.readLine());
-	for(int i = 0; i < lines; i++) {
-	    
+	String s = r.readLine();
+	String ans = "";
+	int len = s.length();
+	int[] h = new int[26];
+
+	for(char c: s.toCharArray()) {
+	    int index = hash(c);
+	    if(h[index] == 0) {
+		ans = ans + c;
+		h[index] = 1;
+	    }
 	}
+
+	prnt(ans);
     }
 
     public static void prnt(String s) {
@@ -32,5 +42,9 @@ public class Main {
     }
     public static long toLong(String s) {
 	return Long.parseLong(s);
+    }
+    static int hash(char c) {
+	int ascii = (int)c;
+	return c%97;
     }
 }
